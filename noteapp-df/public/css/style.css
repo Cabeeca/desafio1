@@ -1,0 +1,67 @@
+/* Resete padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --blue: #40508d
+}
+
+/* Estilização da aplicação */
+
+.container {
+    max-width: 1024px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--blue);
+    font-size: 1.8em;
+    padding: 22px;
+}
+
+.header a {
+    color: white;
+}
+
+.notes {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.note {
+    max-width: 256px;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+
+.note p {
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.note .actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.note .actions button {
+    margin-left: 10px;
+    font-size: 1.1em;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
