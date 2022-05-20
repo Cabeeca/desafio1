@@ -58,10 +58,34 @@ a {
     justify-content: flex-end;
 }
 
-.note .actions button {
+.note .actions .btn {
     margin-left: 10px;
     font-size: 1.1em;
     background-color: transparent;
     border: none;
     cursor: pointer;
 }
+
+/* Estilização do Formulário */
+
+.txt {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.form {
+    margin-top: 50px;
+}
+
+form {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form .inp {
+    width: 320px;
+}
+

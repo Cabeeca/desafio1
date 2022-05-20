@@ -1,0 +1,13 @@
+<%- include('include/_header') %>
+    <form action="/edit/<%= founded.id %>?_method=PUT" method="POST" class="form">
+        <div class="txt">
+            <label for="title">Title</label>
+            <input type="text" name="title" required autocomplete="off" class="inp" value="<%= founded.title %>"/>
+        </div>
+        <div class="txt">
+            <label for="content">Content</label>
+            <textarea type="text" name="content" required autocomplete="off" class="inp"><%= founded.content %></textarea>
+        </div>
+        <button type="submit" class="inp">EDITAR NOTA</button>
+    </form>
+ <%- include('include/_footer') %>

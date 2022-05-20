@@ -1,63 +1,20 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f81f74a21e.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/public/css/style.css">
-    <title>Desafio Henricão</title>
-</head>
-<body>
-    <div class="container">
-        <header class="header">
-            <div class="logo"><a href="/">NoteApp</a></div>
-            <div class="newNote"><a href="/create">New Note</a></div>
-        </header>
+<%- include('include/_header') %>
         <div class="notes">
+            <% for(var cont=0; cont < Notes.length; cont++) { %>                
             <div class="note">
                 <div class="content">
-                    <h2>Titulo da nota</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic deserunt aliquid repellendus provident et facilis pariatur! Voluptates quo, odit totam fugiat modi mollitia quidem ipsam saepe repudiandae debitis inventore deleniti.</p>
+                    <h2><%= Notes[cont].title %></h2>
+                    <p><%= Notes[cont].content %></p>
                 </div>
                 <div class="actions">
-                    <form action="">
-                        <button type="submit" class="fas fa-edit"></button>
+                    <form action="/edit/<%= Notes[cont].id %>" method="GET">
+                        <button type="submit" class="fas fa-edit btn"></button>
                     </form>
-                    <form action="">
-                        <button type="submit" class="fas fa-times"></button>
+                    <form action="/delete/<%= Notes[cont].id %>?_method=DELETE" method="POST">
+                        <button type="submit" class="fas fa-times btn"></button>
                     </form>
                 </div>
             </div>
-            <div class="note">
-                <div class="content">
-                    <h2>Titulo da nota 2</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic deserunt aliquid repellendus provident et facilis pariatur! Voluptates quo, odit totam fugiat modi mollitia quidem ipsam saepe repudiandae debitis inventore deleniti.</p>
-                </div>
-                <div class="actions">
-                    <form action="">
-                        <button type="submit" class="fas fa-edit"></button>
-                    </form>
-                    <form action="">
-                        <button type="submit" class="fas fa-times"></button>
-                    </form>
-                </div>
-            </div>
-            <div class="note">
-                <div class="content">
-                    <h2>Titulo da nota 3</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic deserunt aliquid repellendus provident et facilis pariatur! Voluptates quo, odit totam fugiat modi mollitia quidem ipsam saepe repudiandae debitis inventore deleniti.</p>
-                </div>
-                <div class="actions">
-                    <form action="">
-                        <button type="submit" class="fas fa-edit"></button>
-                    </form>
-                    <form action="">
-                        <button type="submit" class="fas fa-times"></button>
-                    </form>
-                </div>
-            </div>
+            <% } %>
         </div>
-    </div>
-</body>
-</html>
+ <%- include('include/_footer') %>
